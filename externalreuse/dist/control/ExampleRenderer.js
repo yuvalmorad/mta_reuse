@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/Core"],function(e){"use strict";var r={apiVersion:2};r.render=function(e,r){e.openStart("div",r);e.class("myLibPrefixExample");e.openEnd();e.text("My reuse control");e.close("div")};return r});

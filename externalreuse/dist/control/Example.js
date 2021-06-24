@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/Control","./ExampleRenderer"],function(e,r){"use strict";var t=e.extend("ns.reuse.control.Example",{metadata:{properties:{text:{type:"string",group:"Data",defaultValue:null}},events:{press:{}}},renderer:r,onclick:function(){this.firePress()}});return t});

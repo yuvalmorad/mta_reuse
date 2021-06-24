@@ -1,0 +1,45 @@
+_schema-version: "3.1"
+ID: mta_reuse
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: mta_reuse-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: mta_reuse-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - nsexternalreuse.zip
+      name: nsexternalreuse
+      target-path: resources/
+- name: nsexternalreuse
+  type: html5
+  path: externalreuse
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: mta_reuse-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: mta_reuse-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install
+

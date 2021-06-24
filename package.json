@@ -1,0 +1,26 @@
+{
+  "name": "mta_reuse",
+  "version": "1.0.0",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@sap/ux-specification": "^1.90.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "sapux": [
+    "app/externalui1"
+  ]
+}

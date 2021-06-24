@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/UIComponent"],function(n){"use strict";return n.extend("ns.externalreuse.Component",{metadata:{manifest:"json"},init:function(){}})});
